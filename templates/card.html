@@ -1,0 +1,14 @@
+{{define "card"}}
+
+<div class="card-box">
+<a class="readMore" href="http://localhost:8080/artist/{{.Name}}">
+<div class="card">
+    <img class="image" src="{{.Image}}" alt="{{.Name}}">
+    <span>
+        <h3 class="dates">{{.CreationDate}}</h3>
+        <h2 class="artists">{{.Name}}</h2>
+    </span>
+</div>
+</a>
+</div>
+{{end}}

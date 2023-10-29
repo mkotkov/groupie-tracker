@@ -1,0 +1,61 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="{{.ArtistInfo.Image}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/7e7d4b4f40.js" crossorigin="anonymous"></script>
+    <title>{{.ArtistInfo.Name}}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-line"><a class="back-home" href="/"><i class="fa-solid fa-house"></i> Home</a></div>
+      <div class="first-block-artist">
+        <img class="imageArtist" src="{{.ArtistInfo.Image}}" alt="{{.ArtistInfo.Name}}">
+        <div>
+          <h1 class="name-artist">{{.ArtistInfo.Name}}</h1>
+          <h3 class="data-artist">{{.ArtistInfo.CreationDate}}</h3>
+        </div>
+      </div>
+      
+      <div class="description">
+        
+        <div class="concert">
+          <table>
+            <tbody>
+              <tr>
+                <td class="table-header" colspan="2">Concert schedule</td>
+              </tr>
+              {{with formatRelations .ArtistRelations.Index}}
+              {{range $location, $dates := .}}
+              <tr>
+                  <td class="location"><p>{{ $location }}</p></td>
+                  <td class="date">{{ range $date := $dates }}
+                    <p>{{ $date }}</p>{{end}}</td>
+                    {{end}}
+                    {{end}}            
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-artist">
+          <ul>
+            <li><p>First album:</p><span>{{.ArtistInfo.FirstAlbum}}</span></li>
+            <li>
+              <p>Members:</p>
+              <span class="members">
+                {{range .ArtistInfo.Members}}
+                <p>{{.}}</p>
+                {{end}}
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
