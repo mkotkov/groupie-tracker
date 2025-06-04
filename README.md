@@ -17,8 +17,6 @@ Groupie tracker visualizations consists of manipulating the data coming from the
 ## Authors
 
 - [Maksym Kotkov](https://01.kood.tech/git/mkotkov)
-- [Kadri Kapp](https://01.kood.tech/git/kkapp)
-- [Anton Makejev](https://01.kood.tech/git/amakejev)
 
 ## To run
 
